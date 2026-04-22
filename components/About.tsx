@@ -19,8 +19,8 @@ const About: React.FC = () => {
           </div>
           <div className="relative">
              <img 
-               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-               alt="Team working" 
+               src="/Whisk_bbda4d8f425e4b6b45d406b75ecdbc90dr.jpeg"
+               alt="Equipo ZAG"
                className="rounded-3xl shadow-2xl object-cover w-full h-[500px] grayscale hover:grayscale-0 transition-all duration-700"
              />
              <div className="absolute -bottom-8 -left-8 bg-white p-8 rounded-2xl shadow-xl border border-gray-100 max-w-xs hidden md:block">
