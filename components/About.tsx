@@ -1,0 +1,38 @@
+import React from 'react';
+
+const About: React.FC = () => {
+  return (
+    <section id="about" className="py-24 bg-white scroll-mt-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Quiénes Somos</span>
+            <h2 className="font-display text-4xl lg:text-5xl font-bold mb-6 text-gray-900 leading-tight">
+              Una consultora estratégica en marketing y comunicación.
+            </h2>
+            <div className="space-y-6 text-lg text-gray-600 font-light leading-relaxed">
+              <p>
+                Acompañamos a empresas y pymes que venden servicios o soluciones a medida a ordenar, profesionalizar y potenciar su comunicación, alineando cada acción a objetivos comerciales concretos.
+
+              </p>
+          
+            </div>
+          </div>
+          <div className="relative">
+             <img 
+               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+               alt="Team working" 
+               className="rounded-3xl shadow-2xl object-cover w-full h-[500px] grayscale hover:grayscale-0 transition-all duration-700"
+             />
+             <div className="absolute -bottom-8 -left-8 bg-white p-8 rounded-2xl shadow-xl border border-gray-100 max-w-xs hidden md:block">
+               <p className="text-primary font-bold text-xl mb-2">Nuestro ADN</p>
+               <p className="text-sm text-gray-600">Pasión por transformar negocios a través de estrategias digitales efectivas.</p>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;
