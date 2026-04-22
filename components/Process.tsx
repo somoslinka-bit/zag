@@ -34,10 +34,7 @@ const Process: React.FC = () => {
             Conocé nuestro método de trabajo 
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
-            Un método estratégico para comunicar con foco y resultados
-          </p>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
-            Integramos la estrategia, la ejecución y la medición en un proceso de trabajo claro que ordena la comunicación de tu empresa, optimiza cada canal y permite tomar decisiones basadas en datos.
+            Un método de trabajo para comunicar con resultados, integrando estrategia, ejecución y análisis en un proceso de trabajo claro que ordena la comunicación de tu empresa, optimiza cada canal y permite tomar decisiones basadas en datos.
           </p>
         </div>
 

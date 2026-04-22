@@ -7,7 +7,6 @@ import About from './components/About';
 import Process from './components/Process';
 import Services from './components/Services';
 import WhyUs from './components/WhyUs';
-import Team from './components/Team';
 import Marquee from './components/Marquee';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -26,7 +25,6 @@ const Home: React.FC = () => (
       <Services />
       <Consultoria />
       <WhyUs />
-      <Team />
       <Marquee />
       <Contact />
     </main>

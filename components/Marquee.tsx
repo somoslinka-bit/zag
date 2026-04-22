@@ -11,7 +11,7 @@ const Marquee: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
         <h2 className="font-display text-3xl font-bold mb-4 text-gray-900">Clientes y Experiencia</h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto font-light">
-          Empresas, pymes y profesionales de distintos rubros confían en ZAG para potenciar su comunicación y lograr resultados medibles.
+          Empresas, pymes y profesionales de distintos rubros confían en ZAG para potenciar su comunicación y lograr resultados Sostenibles.
         </p>
       </div>
       <div className="relative flex overflow-x-hidden group">

@@ -50,7 +50,7 @@ const Hero: React.FC = () => {
           {/* Text Content */}
           <div className="space-y-8 animate-fade-in-up max-w-4xl mx-auto">
             <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-none text-gray-900">
-              Marketing y comunicación estratégica <span className="text-primary"> para empresas.</span>
+              Marketing y comunicación <span className="text-primary"> para empresas.</span>
  <br/>
               
             </h1>

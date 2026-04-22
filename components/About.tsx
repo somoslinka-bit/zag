@@ -6,9 +6,8 @@ const About: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Quiénes Somos</span>
             <h2 className="font-display text-4xl lg:text-5xl font-bold mb-6 text-gray-900 leading-tight">
-              Una consultora estratégica en marketing y comunicación.
+              Somos un equipo de profesionales con experiencia real y visión estratégica.
             </h2>
             <div className="space-y-6 text-lg text-gray-600 font-light leading-relaxed">
               <p>
