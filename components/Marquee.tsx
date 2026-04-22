@@ -35,17 +35,18 @@ const Marquee: React.FC = () => {
         </p>
       </div>
       <div className="relative flex overflow-x-hidden">
-        <div className="py-4 animate-marquee flex items-center gap-16 px-8 whitespace-nowrap">
+        <div className="py-4 animate-marquee flex items-center gap-12 px-8 whitespace-nowrap">
           {track.map((logo, index) => (
-            <img
-              key={index}
-              src={logo.src}
-              alt={logo.alt}
-              className="h-14 w-auto object-contain transition-all duration-300"
-              style={{ filter: 'grayscale(1) opacity(0.55)' }}
-              onMouseEnter={e => (e.currentTarget.style.filter = 'grayscale(0) opacity(1)')}
-              onMouseLeave={e => (e.currentTarget.style.filter = 'grayscale(1) opacity(0.55)')}
-            />
+            <div key={index} className="flex-shrink-0 flex items-center justify-center" style={{ width: '160px', height: '64px' }}>
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="max-h-full max-w-full object-contain transition-all duration-300"
+                style={{ filter: 'grayscale(1) opacity(0.55)' }}
+                onMouseEnter={e => (e.currentTarget.style.filter = 'grayscale(0) opacity(1)')}
+                onMouseLeave={e => (e.currentTarget.style.filter = 'grayscale(1) opacity(0.55)')}
+              />
+            </div>
           ))}
         </div>
 
