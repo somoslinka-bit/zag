@@ -262,17 +262,17 @@ const ConsultoriaPage: React.FC = () => {
       </section>
 
       {/* BENEFICIOS */}
-      <section className="py-24 bg-gray-900 text-white">
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
                 Lo que obtenés
               </span>
-              <h2 className="font-display text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+              <h2 className="font-display text-4xl lg:text-5xl font-bold mb-6 leading-tight text-gray-900">
                 Los entregables concretos de cada proceso
               </h2>
-              <p className="text-gray-400 text-xl font-light leading-relaxed">
+              <p className="text-gray-600 text-xl font-light leading-relaxed">
                 Más que consejos: un plan de acción listo para ejecutar,
                 con herramientas y marcos de trabajo probados en más de 120
                 empresas.
@@ -283,10 +283,10 @@ const ConsultoriaPage: React.FC = () => {
               {benefits.map((b, i) => (
                 <div
                   key={i}
-                  className="flex items-start gap-4 bg-white/5 rounded-xl p-4 hover:bg-white/10 transition-colors"
+                  className="flex items-start gap-4 bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow"
                 >
                   <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-200 font-light">{b}</span>
+                  <span className="text-gray-700 font-light">{b}</span>
                 </div>
               ))}
             </div>
@@ -327,21 +327,20 @@ const ConsultoriaPage: React.FC = () => {
       {/* CTA FINAL */}
       <section
         id="contact-consultoria"
-        className="py-24 bg-white scroll-mt-32"
+        className="py-24 bg-gray-50 scroll-mt-32"
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gray-900 rounded-[3rem] p-10 lg:p-16 text-center relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -ml-16 -mb-16 pointer-events-none" />
+          <div className="bg-white rounded-[3rem] p-10 lg:p-16 text-center relative overflow-hidden shadow-2xl">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none" />
 
             <div className="relative z-10">
               <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
                 Empezá hoy
               </span>
-              <h2 className="font-display text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+              <h2 className="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                 ¿Listo para ordenar tu estrategia?
               </h2>
-              <p className="text-gray-400 text-xl font-light mb-10 max-w-2xl mx-auto">
+              <p className="text-gray-600 text-xl font-light mb-10 max-w-2xl mx-auto">
                 Agendá una sesión exploratoria gratuita de 30 minutos y
                 descubrí cómo podemos ayudarte a crecer.
               </p>
@@ -351,14 +350,14 @@ const ConsultoriaPage: React.FC = () => {
                   href="https://wa.me/5492494606868"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-full hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-white font-semibold rounded-full hover:opacity-90 shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   <MessageCircle className="w-5 h-5" />
                   Escribinos por WhatsApp
                 </a>
                 <Link
                   to="/#contact"
-                  className="inline-flex items-center justify-center px-8 py-4 border border-white/20 text-white font-semibold rounded-full hover:border-white/50 transition-all duration-300"
+                  className="inline-flex items-center justify-center px-8 py-4 border border-gray-300 text-gray-900 font-semibold rounded-full hover:border-primary hover:text-primary transition-all duration-300"
                 >
                   Enviar un mensaje
                 </Link>
