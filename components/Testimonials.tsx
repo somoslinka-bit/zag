@@ -29,7 +29,7 @@ const Testimonials: React.FC = () => {
             
             <div className="flex items-center gap-4">
               <img 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK7cmuAnf96eYZ3OY1i0ibLyFDfxI67x4_mrNCrb25VW4pbVV86hrib-nxxb6BFRg_iW2yeMzvdh76Y0vgT4zwXQmyq24ChkcNXgDEE7A6XbMCeVH3ciHIJrVKzMpMFbTpWxLGat-AhjU3xoArMDurbnBDhLeNOXGtu22DeOpxKEyRyfXEcOjHYUE2C3m8onyW_ZF_JrhuawmNvqp4CYXnlqz62HpcaMwB4NMMS0_OUwH0R6IKFxOWwp6Lm2iuTgyP5J4eDF0VQbM" 
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" 
                 alt="Marcus Chen" 
                 className="w-16 h-16 rounded-full object-cover border-2 border-primary"
               />

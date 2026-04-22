@@ -17,7 +17,7 @@ const CaseStudy: React.FC = () => {
             <div className="relative rounded-[2rem] overflow-hidden shadow-2xl">
               <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
               <img 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlk7sNrAW4Y7j40lwtBZUC3U2a4XHTyW3tD9oqo3IO6WEcDu9pgZoWv7rW_NrwhFTALWtDUNfuESl5KtcZba5quaudE1Etb2HNzvu2K2sAfOtDY8jx9B-BZhHV4kEkTNSXr1j9oNa8b-nHp56mbCmd_CU-WSzBGJWYzk6qQ_xXj3d5lL2EinJ32-1rRwRK81Bu7_IBI9IxXLBf94_e1ktsKOQTdfOgQ_Do3yJICNSAveP5-v9fW2i8cLQYwExO3jNs3RFzNdMSR90" 
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                 alt="Dashboard UI" 
                 className="w-full object-cover transform group-hover:scale-105 transition duration-700"
               />
