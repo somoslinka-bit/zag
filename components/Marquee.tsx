@@ -1,26 +1,26 @@
 import React from 'react';
 
 const logos = [
-  { src: '/logos/agrovector.png',            alt: 'Agrovector' },
-  { src: '/logos/amaike.png',                alt: 'Amaike' },
-  { src: '/logos/atalaya.png',               alt: 'Atalaya',          scale: 2,   origin: 'center' },
-  { src: '/logos/auki.png',                  alt: 'Auki' },
-  { src: '/logos/basilico.png',              alt: 'Basílico' },
-  { src: '/logos/datastar.png',              alt: 'Datastar',          scale: 4,   origin: 'center' },
-  { src: '/logos/historias-valle.png',       alt: 'Historias Valle' },
-  { src: '/logos/hlc.png',                   alt: 'HLC' },
-  { src: '/logos/mulen-hotel.png',           alt: 'Mulén Hotel' },
-  { src: '/logos/pc21.png',                  alt: 'PC-21' },
-  { src: '/logos/pico.png',                  alt: 'Pico' },
-  { src: '/logos/plug.png',                  alt: 'Plug' },
-  { src: '/logos/premin.png',                alt: 'Premin',            scale: 2.2, origin: 'top center' },
-  { src: '/logos/real-estate-historias.png', alt: 'Real Estate' },
-  { src: '/logos/nexus-sports.png',          alt: 'Nexus Sports' },
-  { src: '/logos/faro-verde.jpeg',           alt: 'Grupo Faro Verde' },
-  { src: '/logos/casa-blanco.jpg',           alt: 'Casa Blanco',       scale: 1.8, origin: 'center' },
-  { src: '/logos/cat-parque-industrial.png', alt: 'CAT Parque Industrial' },
-  { src: '/logos/pico-2.png',                alt: 'Pico Deportes' },
-  { src: '/logos/galtech.png',               alt: 'Galtech' },
+  { src: '/logos/7.jpg',                     alt: 'Cliente' },
+  { src: '/logos/7%20(1).jpg',               alt: 'Cliente' },
+  { src: '/logos/8.jpg',                     alt: 'Cliente' },
+  { src: '/logos/9.jpg',                     alt: 'Cliente' },
+  { src: '/logos/10.jpg',                    alt: 'Cliente' },
+  { src: '/logos/11.jpg',                    alt: 'Cliente' },
+  { src: '/logos/12.jpg',                    alt: 'Cliente' },
+  { src: '/logos/13.jpg',                    alt: 'Cliente' },
+  { src: '/logos/14.jpg',                    alt: 'Cliente' },
+  { src: '/logos/15.jpg',                    alt: 'Cliente' },
+  { src: '/logos/16.jpg',                    alt: 'Cliente' },
+  { src: '/logos/17.jpg',                    alt: 'Cliente' },
+  { src: '/logos/18.jpg',                    alt: 'Cliente' },
+  { src: '/logos/19.jpg',                    alt: 'Cliente' },
+  { src: '/logos/20.jpg',                    alt: 'Cliente' },
+  { src: '/logos/21.jpg',                    alt: 'Cliente' },
+  { src: '/logos/22.jpg',                    alt: 'Cliente' },
+  { src: '/logos/23.jpg',                    alt: 'Cliente' },
+  { src: '/logos/24.jpg',                    alt: 'Cliente' },
+  { src: '/logos/real-estate-historias.png', alt: 'Cliente' },
 ];
 
 const Marquee: React.FC = () => {
@@ -43,11 +43,7 @@ const Marquee: React.FC = () => {
                 src={logo.src}
                 alt={logo.alt}
                 className="max-h-full max-w-full object-contain transition-all duration-300"
-                style={{
-                  filter: 'grayscale(1) opacity(0.55)',
-                  transform: logo.scale ? `scale(${logo.scale})` : undefined,
-                  transformOrigin: logo.origin ?? 'center',
-                }}
+                style={{ filter: 'grayscale(1) opacity(0.55)' }}
                 onMouseEnter={e => (e.currentTarget.style.filter = 'grayscale(0) opacity(1)')}
                 onMouseLeave={e => (e.currentTarget.style.filter = 'grayscale(1) opacity(0.55)')}
               />
