@@ -1,5 +1,7 @@
 import React from 'react';
-import { Palette, Video, Megaphone, Radio, Briefcase, Users, Calendar, Layout } from 'lucide-react';
+import { Palette, Video, Megaphone, Radio, Briefcase, Users, Calendar, Layout, ChevronDown } from 'lucide-react';
+import { Expandable, ExpandableContent, ExpandableTrigger } from '@/components/ui/expandable';
+import { cn } from '@/lib/utils';
 
 const Services: React.FC = () => {
   const serviceCategories = [
@@ -57,18 +59,62 @@ const Services: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {serviceCategories.map((category, index) => (
-            <div 
-              key={index} 
-              className="group bg-gray-50 p-8 rounded-2xl hover:bg-black hover:text-white transition-all duration-300 shadow-sm hover:shadow-xl"
-            >
-              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-white/20 group-hover:text-white transition-colors">
-                {category.icon}
-              </div>
-              <h3 className="text-xl font-bold mb-0 text-gray-900 group-hover:text-white">{category.title}</h3>
-             
-            </div>
+            <Expandable key={index} expandDirection="vertical">
+              {({ isExpanded }) => (
+                <div
+                  className={cn(
+                    "rounded-2xl transition-all duration-300",
+                    isExpanded
+                      ? "bg-gray-900 shadow-xl"
+                      : "bg-gray-50 shadow-sm hover:shadow-md"
+                  )}
+                >
+                  <ExpandableTrigger>
+                    <div className="p-6 lg:p-8 select-none">
+                      <div
+                        className={cn(
+                          "w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-colors",
+                          isExpanded ? "bg-white/10 text-white" : "bg-white text-primary"
+                        )}
+                      >
+                        {category.icon}
+                      </div>
+                      <div className="flex items-center justify-between gap-2">
+                        <h3
+                          className={cn(
+                            "text-xl font-bold transition-colors",
+                            isExpanded ? "text-white" : "text-gray-900"
+                          )}
+                        >
+                          {category.title}
+                        </h3>
+                        <ChevronDown
+                          className={cn(
+                            "w-4 h-4 flex-shrink-0 transition-all duration-300",
+                            isExpanded ? "rotate-180 text-white" : "text-gray-400"
+                          )}
+                        />
+                      </div>
+                    </div>
+                  </ExpandableTrigger>
+
+                  <ExpandableContent preset="slide-up">
+                    <div className="px-6 lg:px-8 pb-6 pt-1 border-t border-white/10">
+                      <ul className="space-y-2.5 mt-3">
+                        {category.items.map((item, i) => (
+                          <li key={i} className="flex items-center gap-2.5 text-sm text-white/75">
+                            <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </ExpandableContent>
+                </div>
+              )}
+            </Expandable>
           ))}
         </div>
       </div>
