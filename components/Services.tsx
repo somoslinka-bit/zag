@@ -1,166 +1,155 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { Palette, Video, Megaphone, Radio, Briefcase, Users, Calendar, Layout, ChevronDown } from 'lucide-react';
-import { Expandable, ExpandableContent, ExpandableTrigger } from '@/components/ui/expandable';
-import { cn } from '@/lib/utils';
+import { Palette, Video, Megaphone, Radio, Briefcase, Users, Calendar, Layout } from 'lucide-react';
 
 const serviceCategories = [
   {
     title: "Branding",
-    icon: <Palette size={24} />,
-    items: ["Identidad visual", "Manual de marca", "Rediseño de marca", "Tono, propósito y posicionamiento"]
+    icon: <Palette size={28} />,
+    items: ["Identidad visual", "Manual de marca", "Rediseño de marca", "Tono, propósito y posicionamiento"],
   },
   {
     title: "Contenido",
-    icon: <Video size={24} />,
-    items: ["Estrategias de contenido", "Producción y planificación mensual", "Coordinación de equipos audiovisuales", "Storytelling y guiones", "Videos, fotografía, institucional"]
+    icon: <Video size={28} />,
+    items: ["Estrategias de contenido", "Producción y planificación mensual", "Coordinación audiovisual", "Storytelling y guiones", "Videos y fotografía"],
   },
   {
     title: "Publicidad Digital",
-    icon: <Megaphone size={24} />,
-    items: ["Meta Ads", "Google Ads", "LinkedIn Ads", "TikTok Ads", "Campañas de performance", "Reportes y optimizaciones"]
+    icon: <Megaphone size={28} />,
+    items: ["Meta Ads", "Google Ads", "LinkedIn Ads", "TikTok Ads", "Campañas de performance", "Reportes y optimizaciones"],
   },
   {
     title: "Medios Tradicionales",
-    icon: <Radio size={24} />,
-    items: ["Radio", "Diarios y portales digitales", "Cartelería en vía pública", "Publicidad en eventos", "Gestión integral"]
+    icon: <Radio size={28} />,
+    items: ["Radio", "Diarios y portales digitales", "Cartelería en vía pública", "Publicidad en eventos", "Gestión integral"],
   },
   {
     title: "Consultoría PYMEs",
-    icon: <Briefcase size={24} />,
-    items: ["Diagnóstico", "Auditoría", "Acompañamiento estratégico", "Plan de acción personalizado", "Gestión de redes"]
+    icon: <Briefcase size={28} />,
+    items: ["Diagnóstico", "Auditoría", "Acompañamiento estratégico", "Plan de acción personalizado", "Gestión de redes"],
   },
   {
     title: "Capacitaciones",
-    icon: <Users size={24} />,
-    items: ["Marketing digital", "Comunicación y contenido", "Buenas prácticas (IG/LinkedIn)", "Branding interno"]
+    icon: <Users size={28} />,
+    items: ["Marketing digital", "Comunicación y contenido", "Buenas prácticas (IG/LinkedIn)", "Branding interno"],
   },
   {
     title: "Eventos Corporativos",
-    icon: <Calendar size={24} />,
-    items: ["Cobertura de eventos", "Merchandising y kits", "Activaciones internas", "Coordinación audiovisual"]
+    icon: <Calendar size={28} />,
+    items: ["Cobertura de eventos", "Merchandising y kits", "Activaciones internas", "Coordinación audiovisual"],
   },
   {
     title: "Diseño y Web",
-    icon: <Layout size={24} />,
-    items: ["Piezas digitales y packaging", "Señalética", "Landing Pages (Diseño/Redacción)", "Optimizaciones y Analytics"]
-  }
+    icon: <Layout size={28} />,
+    items: ["Piezas digitales y packaging", "Señalética", "Landing Pages", "Optimizaciones y Analytics"],
+  },
 ];
 
-type ServiceCardProps = {
-  category: typeof serviceCategories[0];
-  index: number;
-  centerIndex: number;
-  scrollYProgress: any;
+type ServiceStickyCardProps = {
+  i: number;
+  service: typeof serviceCategories[0];
+  progress: any;
+  range: [number, number];
+  targetScale: number;
 };
 
-const ServiceCard = ({ category, index, centerIndex, scrollYProgress }: ServiceCardProps) => {
-  const distanceFromCenter = index - centerIndex;
-
-  const x = useTransform(
-    scrollYProgress,
-    [0, 0.55],
-    [distanceFromCenter * 60, 0]
-  );
-  const y = useTransform(
-    scrollYProgress,
-    [0, 0.55],
-    [Math.abs(distanceFromCenter) * 20, 0]
-  );
-  const opacity = useTransform(scrollYProgress, [0, 0.35], [0, 1]);
+const ServiceStickyCard = ({ i, service, progress, range, targetScale }: ServiceStickyCardProps) => {
+  const container = useRef<HTMLDivElement>(null);
+  const scale = useTransform(progress, range, [1, targetScale]);
+  const total = serviceCategories.length;
 
   return (
-    <motion.div style={{ x, y, opacity }} className="will-change-transform">
-      <Expandable expandDirection="vertical">
-        {({ isExpanded }) => (
-          <div
-            className={cn(
-              "rounded-2xl transition-all duration-300",
-              isExpanded
-                ? "bg-gray-900 shadow-xl"
-                : "bg-gray-50 shadow-sm hover:shadow-md"
-            )}
-          >
-            <ExpandableTrigger>
-              <div className="p-6 lg:p-8 select-none">
-                <div
-                  className={cn(
-                    "w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-colors",
-                    isExpanded ? "bg-white/10 text-white" : "bg-white text-primary"
-                  )}
-                >
-                  {category.icon}
-                </div>
-                <div className="flex items-center justify-between gap-2">
-                  <h3
-                    className={cn(
-                      "text-xl font-bold transition-colors",
-                      isExpanded ? "text-white" : "text-gray-900"
-                    )}
-                  >
-                    {category.title}
-                  </h3>
-                  <ChevronDown
-                    className={cn(
-                      "w-4 h-4 flex-shrink-0 transition-all duration-300",
-                      isExpanded ? "rotate-180 text-white" : "text-gray-400"
-                    )}
-                  />
-                </div>
-              </div>
-            </ExpandableTrigger>
+    <div
+      ref={container}
+      className="sticky top-0 flex items-center justify-center px-4 sm:px-6 lg:px-8"
+    >
+      <motion.div
+        style={{
+          scale,
+          top: `calc(-5vh + ${i * 20 + 200}px)`,
+        }}
+        className="relative -top-1/4 origin-top overflow-hidden rounded-2xl sm:rounded-3xl
+                   w-full max-w-[340px] h-[300px]
+                   sm:max-w-[560px] sm:h-[320px]
+                   lg:max-w-[780px] lg:h-[360px]
+                   bg-gray-900"
+      >
+        {/* Fondo decorativo */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none" />
 
-            <ExpandableContent preset="slide-up">
-              <div className="px-6 lg:px-8 pb-6 pt-1 border-t border-white/10">
-                <ul className="space-y-2.5 mt-3">
-                  {category.items.map((item, i) => (
-                    <li key={i} className="flex items-center gap-2.5 text-sm text-white/75">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </ExpandableContent>
+        <div className="relative h-full w-full flex flex-col p-6 sm:p-8 lg:p-10">
+          {/* Header */}
+          <div className="flex items-start gap-4 mb-5">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-primary/15 flex items-center justify-center text-primary flex-shrink-0">
+              {service.icon}
+            </div>
+            <div>
+              <span className="text-xs font-bold text-primary uppercase tracking-widest">
+                {String(i + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight mt-0.5">
+                {service.title}
+              </h3>
+            </div>
           </div>
-        )}
-      </Expandable>
-    </motion.div>
+
+          {/* Items */}
+          <div className="flex flex-wrap gap-2 mt-auto">
+            {service.items.map((item, idx) => (
+              <span
+                key={idx}
+                className="text-xs sm:text-sm text-white/70 bg-white/10 px-3 py-1.5 rounded-full"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+    </div>
   );
 };
 
-const Services: React.FC = () => {
-  const sectionRef = useRef<HTMLElement>(null);
+const Services = () => {
+  const container = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "center center"],
+    target: container,
+    offset: ["start start", "end end"],
   });
 
-  const centerIndex = (serviceCategories.length - 1) / 2;
-
   return (
-    <section ref={sectionRef} id="services" className="py-24 bg-white scroll-mt-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-display text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
-            Servicios
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
-            Soluciones integrales para cada etapa de tu negocio.
-          </p>
-        </div>
+    <section id="services" className="scroll-mt-32">
+      {/* Título — fuera del contenedor sticky */}
+      <div className="py-16 bg-white text-center">
+        <h2 className="font-display text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
+          Servicios
+        </h2>
+        <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
+          Soluciones integrales para cada etapa de tu negocio.
+        </p>
+      </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {serviceCategories.map((category, index) => (
-            <ServiceCard
-              key={index}
-              category={category}
-              index={index}
-              centerIndex={centerIndex}
-              scrollYProgress={scrollYProgress}
+      {/* Contenedor sticky */}
+      <div
+        ref={container}
+        className="relative flex flex-col items-center bg-gray-50
+                   pt-[5vh] pb-[60vh]
+                   sm:pt-[8vh] sm:pb-[70vh]
+                   lg:pt-[10vh] lg:pb-[80vh]"
+      >
+        {serviceCategories.map((service, i) => {
+          const targetScale = Math.max(0.7, 1 - (serviceCategories.length - i - 1) * 0.05);
+          return (
+            <ServiceStickyCard
+              key={i}
+              i={i}
+              service={service}
+              progress={scrollYProgress}
+              range={[i / serviceCategories.length, 1]}
+              targetScale={targetScale}
             />
-          ))}
-        </div>
+          );
+        })}
       </div>
     </section>
   );

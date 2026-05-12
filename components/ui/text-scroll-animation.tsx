@@ -1,7 +1,9 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import ReactLenis from "lenis/react";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { cn } from "@/lib/utils";
+
+// ─── CharacterV1 / V2 / V3 (convergence on scroll) ───────────────────────────
 
 type CharacterProps = {
   char: string;
@@ -10,177 +12,109 @@ type CharacterProps = {
   scrollYProgress: any;
 };
 
-export const CharacterV1 = ({
-  char,
-  index,
-  centerIndex,
-  scrollYProgress,
-}: CharacterProps) => {
+export const CharacterV1 = ({ char, index, centerIndex, scrollYProgress }: CharacterProps) => {
   const isSpace = char === " ";
   const distanceFromCenter = index - centerIndex;
-
   const x = useTransform(scrollYProgress, [0, 0.5], [distanceFromCenter * 50, 0]);
   const rotateX = useTransform(scrollYProgress, [0, 0.5], [distanceFromCenter * 50, 0]);
-
   return (
-    <motion.span
-      className={cn("inline-block text-orange-500", isSpace && "w-4")}
-      style={{ x, rotateX }}
-    >
+    <motion.span className={cn("inline-block text-orange-500", isSpace && "w-4")} style={{ x, rotateX }}>
       {char}
     </motion.span>
   );
 };
 
-export const CharacterV2 = ({
-  char,
-  index,
-  centerIndex,
-  scrollYProgress,
-}: CharacterProps) => {
+export const CharacterV2 = ({ char, index, centerIndex, scrollYProgress }: CharacterProps) => {
   const distanceFromCenter = index - centerIndex;
-
   const x = useTransform(scrollYProgress, [0, 0.5], [distanceFromCenter * 50, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [0.75, 1]);
   const y = useTransform(scrollYProgress, [0, 0.5], [Math.abs(distanceFromCenter) * 50, 0]);
-
   return (
-    <motion.img
-      src={char}
-      alt=""
-      className="h-16 w-16 shrink-0 object-contain will-change-transform"
-      style={{ x, scale, y, transformOrigin: "center" }}
-    />
+    <motion.img src={char} alt="" className="h-16 w-16 shrink-0 object-contain will-change-transform" style={{ x, scale, y, transformOrigin: "center" }} />
   );
 };
 
-export const CharacterV3 = ({
-  char,
-  index,
-  centerIndex,
-  scrollYProgress,
-}: CharacterProps) => {
+export const CharacterV3 = ({ char, index, centerIndex, scrollYProgress }: CharacterProps) => {
   const distanceFromCenter = index - centerIndex;
-
   const x = useTransform(scrollYProgress, [0, 0.5], [distanceFromCenter * 90, 0]);
   const rotate = useTransform(scrollYProgress, [0, 0.5], [distanceFromCenter * 50, 0]);
   const y = useTransform(scrollYProgress, [0, 0.5], [-Math.abs(distanceFromCenter) * 20, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [0.75, 1]);
-
   return (
-    <motion.img
-      src={char}
-      alt=""
-      className="h-16 w-16 shrink-0 object-contain will-change-transform"
-      style={{ x, rotate, y, scale, transformOrigin: "center" }}
-    />
+    <motion.img src={char} alt="" className="h-16 w-16 shrink-0 object-contain will-change-transform" style={{ x, rotate, y, scale, transformOrigin: "center" }} />
   );
 };
 
-const Bracket = ({ className }: { className: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 27 78" className={className}>
-    <path
-      fill="currentColor"
-      d="M26.52 77.21h-5.75c-6.83 0-12.38-5.56-12.38-12.38V48.38C8.39 43.76 4.63 40 .01 40v-4c4.62 0 8.38-3.76 8.38-8.38V12.4C8.38 5.56 13.94 0 20.77 0h5.75v4h-5.75c-4.62 0-8.38 3.76-8.38 8.38V27.6c0 4.34-2.25 8.17-5.64 10.38 3.39 2.21 5.64 6.04 5.64 10.38v16.45c0 4.62 3.76 8.38 8.38 8.38h5.75v4.02Z"
-    />
-  </svg>
-);
+// ─── StickyCard_001 / ImagesScrollingAnimation (stacking on scroll) ───────────
 
-export const Skiper31 = () => {
-  const targetRef = useRef<HTMLDivElement | null>(null);
-  const targetRef2 = useRef<HTMLDivElement | null>(null);
-  const targetRef3 = useRef<HTMLDivElement | null>(null);
+export const StickyCard_001 = ({
+  i,
+  title,
+  src,
+  progress,
+  range,
+  targetScale,
+}: {
+  i: number;
+  title: string;
+  src: string;
+  progress: any;
+  range: [number, number];
+  targetScale: number;
+}) => {
+  const container = useRef<HTMLDivElement>(null);
+  const scale = useTransform(progress, range, [1, targetScale]);
 
-  const { scrollYProgress } = useScroll({ target: targetRef });
-  const { scrollYProgress: scrollYProgress2 } = useScroll({ target: targetRef2 });
-  const { scrollYProgress: scrollYProgress3 } = useScroll({ target: targetRef3 });
+  return (
+    <div ref={container} className="sticky top-0 flex items-center justify-center px-4 sm:px-6 lg:px-8">
+      <motion.div
+        style={{ scale, top: `calc(-5vh + ${i * 15 + 200}px)` }}
+        className="rounded-2xl sm:rounded-3xl lg:rounded-4xl relative -top-1/4 flex origin-top flex-col overflow-hidden
+                   h-[200px] w-[280px]
+                   sm:h-[240px] sm:w-[360px]
+                   md:h-[280px] md:w-[420px]
+                   lg:h-[300px] lg:w-[500px]"
+      >
+        <img src={src} alt={title} className="h-full w-full object-cover" />
+      </motion.div>
+    </div>
+  );
+};
 
-  const text = "see more from ";
-  const characters = text.split("");
-  const centerIndex = Math.floor(characters.length / 2);
+const projects = [
+  { title: "Project 1", src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop&crop=center" },
+  { title: "Project 2", src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop&crop=center" },
+  { title: "Project 3", src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=300&fit=crop&crop=center" },
+  { title: "Project 4", src: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&h=300&fit=crop&crop=center" },
+  { title: "Project 5", src: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=500&h=300&fit=crop&crop=center" },
+];
 
-  const macIcon = [
-    "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/discord.svg",
-    "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/figma.svg",
-    "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/framer.svg",
-    "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/github.svg",
-    "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/mongodb.svg",
-    "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/notion.svg",
-  ];
-  const iconCenterIndex = Math.floor(macIcon.length / 2);
+export const ImagesScrollingAnimation = () => {
+  const container = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: container, offset: ["start start", "end end"] });
 
   return (
     <ReactLenis root>
-      <main className="w-full bg-white">
-        <div className="top-22 absolute left-1/2 z-10 grid -translate-x-1/2 content-start justify-items-center gap-6 text-center text-black">
-          <span className="relative max-w-[12ch] text-xs uppercase leading-tight opacity-40 after:absolute after:left-1/2 after:top-full after:h-16 after:w-px after:bg-gradient-to-b after:from-[#f5f4f3] after:to-black after:content-['']">
-            Scroll to see more
-          </span>
-        </div>
-
-        <div
-          ref={targetRef}
-          className="relative box-border flex h-[210vh] items-center justify-center gap-[2vw] overflow-hidden bg-[#f5f4f3] p-[2vw]"
-        >
-          <div
-            className="w-full max-w-4xl text-center text-6xl font-bold uppercase tracking-tighter text-black"
-            style={{ perspective: "500px" }}
-          >
-            {characters.map((char, index) => (
-              <CharacterV1
-                key={index}
-                char={char}
-                index={index}
-                centerIndex={centerIndex}
-                scrollYProgress={scrollYProgress}
-              />
-            ))}
-          </div>
-        </div>
-
-        <div
-          ref={targetRef2}
-          className="relative -mt-[100vh] box-border flex h-[210vh] flex-col items-center justify-center gap-[2vw] overflow-hidden bg-[#f5f4f3] p-[2vw]"
-        >
-          <p className="flex items-center justify-center gap-3 text-2xl font-medium tracking-tight text-black">
-            <Bracket className="h-12 text-black" />
-            <span className="font-medium">integrate with your fav tech stack</span>
-            <Bracket className="h-12 scale-x-[-1] text-black" />
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-8">
-            {macIcon.map((char, index) => (
-              <CharacterV2
-                key={index}
-                char={char}
-                index={index}
-                centerIndex={iconCenterIndex}
-                scrollYProgress={scrollYProgress2}
-              />
-            ))}
-          </div>
-        </div>
-
-        <div
-          ref={targetRef3}
-          className="relative -mt-[95vh] box-border flex h-[210vh] flex-col items-center justify-center gap-[2vw] overflow-hidden bg-[#f5f4f3] p-[2vw]"
-        >
-          <p className="flex items-center justify-center gap-3 text-2xl font-medium tracking-tight text-black">
-            <Bracket className="h-12 text-black" />
-            <span className="font-medium">integrate with your fav tech stack</span>
-            <Bracket className="h-12 scale-x-[-1] text-black" />
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-8" style={{ perspective: "500px" }}>
-            {macIcon.map((char, index) => (
-              <CharacterV3
-                key={index}
-                char={char}
-                index={index}
-                centerIndex={iconCenterIndex}
-                scrollYProgress={scrollYProgress3}
-              />
-            ))}
-          </div>
-        </div>
+      <main
+        ref={container}
+        className="relative flex w-full flex-col items-center justify-center
+                   pb-[50vh] pt-[5vh]
+                   sm:pb-[60vh] sm:pt-[8vh]
+                   lg:pb-[70vh] lg:pt-[10vh]"
+      >
+        {projects.map((project, i) => {
+          const targetScale = Math.max(0.6, 1 - (projects.length - i - 1) * 0.08);
+          return (
+            <StickyCard_001
+              key={`p_${i}`}
+              i={i}
+              {...project}
+              progress={scrollYProgress}
+              range={[i * 0.2, 1]}
+              targetScale={targetScale}
+            />
+          );
+        })}
       </main>
     </ReactLenis>
   );
