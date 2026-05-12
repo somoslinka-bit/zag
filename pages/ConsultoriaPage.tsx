@@ -87,7 +87,6 @@ const ConsultoriaPage: React.FC = () => {
     "Mensajes que conectan con tu audiencia ideal",
     "Métricas claras para medir el éxito de cada acción",
     "Acompañamiento experto durante todo el proceso",
-    "Acceso a herramientas y frameworks probados en +120 empresas",
     "Soporte entre sesiones vía WhatsApp o email",
   ];
 
@@ -102,11 +101,11 @@ const ConsultoriaPage: React.FC = () => {
     },
     {
       q: "¿Las sesiones son presenciales o virtuales?",
-      a: "Trabajamos en formato virtual (Zoom o Meet) o presencial si estás en la zona de Junín y alrededores. Adaptamos la modalidad a lo que te resulte más cómodo.",
+      a: "Trabajamos en formato virtual (Zoom o Meet).",
     },
     {
       q: "¿Cuánto tiempo lleva ver resultados?",
-      a: "Los resultados estratégicos (claridad, plan organizado, mensajes definidos) son inmediatos. Los resultados de negocio dependen de la ejecución, pero la mayoría de nuestros clientes ven mejoras en los primeros 60 días de aplicación del plan.",
+      a: "Los resultados estratégicos (claridad, plan organizado, mensajes definidos) son inmediatos. Los resultados de negocio dependen de la ejecución, pero la mayoría de nuestros clientes ven mejoras en los primeros 90 días de aplicación del plan.",
     },
   ];
 
@@ -173,11 +172,8 @@ const ConsultoriaPage: React.FC = () => {
               Para quién es
             </span>
             <h2 className="font-display text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
-              ¿Este servicio es para vos?
+              ¿A quién está destinado este servicio?
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
-              Trabajamos con perfiles distintos que comparten una necesidad común: claridad estratégica para crecer.
-            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -219,7 +215,7 @@ const ConsultoriaPage: React.FC = () => {
               Nuestro método
             </span>
             <h2 className="font-display text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
-              Cómo trabajamos
+              ¿Cómo trabajamos?
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
               Un proceso estructurado en 4 etapas que va desde el análisis hasta
@@ -270,7 +266,7 @@ const ConsultoriaPage: React.FC = () => {
                 Lo que obtenés
               </span>
               <h2 className="font-display text-4xl lg:text-5xl font-bold mb-6 leading-tight text-gray-900">
-                Los entregables concretos de cada proceso
+                Al final del proceso te entregamos un plan de acción
               </h2>
               <p className="text-gray-600 text-xl font-light leading-relaxed">
                 Más que consejos: un plan de acción listo para ejecutar,
@@ -301,9 +297,6 @@ const ConsultoriaPage: React.FC = () => {
             <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">
               Preguntas frecuentes
             </span>
-            <h2 className="font-display text-4xl lg:text-5xl font-bold text-gray-900">
-              FAQ
-            </h2>
           </div>
 
           <div className="space-y-6">
@@ -341,7 +334,7 @@ const ConsultoriaPage: React.FC = () => {
                 ¿Listo para ordenar tu estrategia?
               </h2>
               <p className="text-gray-600 text-xl font-light mb-10 max-w-2xl mx-auto">
-                Agendá una sesión exploratoria gratuita de 30 minutos y
+                Agendá una reunión gratuita de 30 minutos y
                 descubrí cómo podemos ayudarte a crecer.
               </p>
 

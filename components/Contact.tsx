@@ -11,7 +11,7 @@ const Contact: React.FC = () => {
           
           <div className="relative z-10 text-center mb-12">
             <h2 className="font-display text-3xl lg:text-4xl font-bold mb-6 text-gray-900 leading-tight">
-              ¿Estás listo para ordenar tu comunicación?
+              ¡Trabajemos Juntos!
             </h2>
             <p className="text-lg text-gray-600 font-light mb-8">
               Agendemos una reunión y empecemos a trabajar en tus objetivos.
