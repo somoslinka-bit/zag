@@ -69,9 +69,9 @@ const ServiceStickyCard = ({ i, service, progress, range, targetScale }: Service
           top: `calc(-5vh + ${i * 20 + 200}px)`,
         }}
         className="relative -top-1/4 origin-top overflow-hidden rounded-2xl sm:rounded-3xl
-                   w-full max-w-[340px] h-[300px]
-                   sm:max-w-[560px] sm:h-[320px]
-                   lg:max-w-[780px] lg:h-[360px]
+                   w-full max-w-[340px] h-[220px]
+                   sm:max-w-[560px] sm:h-[230px]
+                   lg:max-w-[780px] lg:h-[250px]
                    bg-white border border-[#FF4500]/20 shadow-sm"
       >
         {/* Barra naranja superior */}
@@ -97,7 +97,7 @@ const ServiceStickyCard = ({ i, service, progress, range, targetScale }: Service
           </div>
 
           {/* Items */}
-          <div className="flex flex-wrap gap-2 mt-auto">
+          <div className="flex flex-wrap gap-2 mt-4">
             {service.items.map((item, idx) => (
               <span
                 key={idx}
