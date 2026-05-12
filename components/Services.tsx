@@ -123,7 +123,7 @@ const Services = () => {
   return (
     <section id="services" className="scroll-mt-32">
       {/* Título — fuera del contenedor sticky */}
-      <div className="py-16 bg-white text-center">
+      <div className="pt-16 pb-8 bg-white text-center">
         <h2 className="font-display text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
           Servicios
         </h2>
@@ -136,9 +136,9 @@ const Services = () => {
       <div
         ref={container}
         className="relative flex flex-col items-center bg-gray-100
-                   pt-[5vh] pb-[60vh]
-                   sm:pt-[8vh] sm:pb-[70vh]
-                   lg:pt-[10vh] lg:pb-[80vh]"
+                   pt-[2vh] pb-[35vh]
+                   sm:pt-[3vh] sm:pb-[45vh]
+                   lg:pt-[4vh] lg:pb-[55vh]"
       >
         {serviceCategories.map((service, i) => {
           const targetScale = Math.max(0.7, 1 - (serviceCategories.length - i - 1) * 0.05);
