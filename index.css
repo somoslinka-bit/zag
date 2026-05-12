@@ -10,7 +10,7 @@
   --font-sans: 'Raleway', sans-serif;
   --font-display: 'Raleway', sans-serif;
 
-  --animate-marquee: marquee 45s linear infinite;
+  --animate-marquee: marquee 90s linear infinite;
   --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
 
   @keyframes marquee {
