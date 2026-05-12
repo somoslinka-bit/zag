@@ -72,22 +72,25 @@ const ServiceStickyCard = ({ i, service, progress, range, targetScale }: Service
                    w-full max-w-[340px] h-[300px]
                    sm:max-w-[560px] sm:h-[320px]
                    lg:max-w-[780px] lg:h-[360px]
-                   bg-gray-900"
+                   bg-white border border-[#FF4500]/20 shadow-sm"
       >
-        {/* Fondo decorativo */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none" />
+        {/* Barra naranja superior */}
+        <div className="h-[3px] w-full bg-[#FF4500]" />
 
-        <div className="relative h-full w-full flex flex-col p-6 sm:p-8 lg:p-10">
+        <div className="h-full w-full flex flex-col p-6 sm:p-8 lg:p-10 pt-5 sm:pt-6 lg:pt-7">
           {/* Header */}
           <div className="flex items-start gap-4 mb-5">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-primary/15 flex items-center justify-center text-primary flex-shrink-0">
+            <div
+              className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center flex-shrink-0"
+              style={{ backgroundColor: '#FF4500' + '18', color: '#FF4500' }}
+            >
               {service.icon}
             </div>
             <div>
-              <span className="text-xs font-bold text-primary uppercase tracking-widest">
+              <span className="text-xs font-bold uppercase tracking-widest" style={{ color: '#FF4500' }}>
                 {String(i + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
               </span>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight mt-0.5">
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 leading-tight mt-0.5">
                 {service.title}
               </h3>
             </div>
@@ -98,7 +101,7 @@ const ServiceStickyCard = ({ i, service, progress, range, targetScale }: Service
             {service.items.map((item, idx) => (
               <span
                 key={idx}
-                className="text-xs sm:text-sm text-white/70 bg-white/10 px-3 py-1.5 rounded-full"
+                className="text-xs sm:text-sm text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full"
               >
                 {item}
               </span>
@@ -132,7 +135,7 @@ const Services = () => {
       {/* Contenedor sticky */}
       <div
         ref={container}
-        className="relative flex flex-col items-center bg-gray-50
+        className="relative flex flex-col items-center bg-gray-100
                    pt-[5vh] pb-[60vh]
                    sm:pt-[8vh] sm:pb-[70vh]
                    lg:pt-[10vh] lg:pb-[80vh]"
