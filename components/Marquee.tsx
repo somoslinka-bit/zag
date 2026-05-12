@@ -32,12 +32,12 @@ const Marquee: React.FC = () => {
         <h2 className="font-display text-3xl font-bold mb-4 text-gray-900">Empresas que confiaron en nosotros</h2>
       </div>
       <div className="relative flex overflow-x-hidden">
-        <div className="py-4 animate-marquee flex items-center gap-6 px-4 whitespace-nowrap">
+        <div className="py-4 animate-marquee flex items-center gap-2 px-2 whitespace-nowrap">
           {track.map((logo, index) => (
             <div
               key={index}
               className="flex-shrink-0 flex items-center justify-center overflow-hidden"
-              style={{ width: '320px', height: '128px' }}
+              style={{ width: '480px', height: '192px' }}
             >
               <img
                 src={logo.src}
