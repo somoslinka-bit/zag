@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2 } from 'lucide-react';
+import { motion } from "motion/react";
 
 const WhyUs: React.FC = () => {
   const points = [
@@ -26,71 +26,59 @@ const WhyUs: React.FC = () => {
   ];
 
   return (
-  <section className="py-24 bg-gray-100 text-gray-900 relative overflow-hidden">
+    <section className="py-24 bg-gray-100 text-gray-900 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Header */}
-        <h2 className="font-display text-4xl lg:text-5xl font-bold mb-16">
+        <motion.h2
+          className="font-display text-4xl lg:text-5xl font-bold mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           ¿Por qué elegirnos?
-        </h2>
+        </motion.h2>
 
-        {/* Timeline */}
         <div className="relative">
+          {/* Línea horizontal animada */}
+          <motion.div
+            className="hidden lg:block absolute top-[11px] left-0 h-px bg-gray-300 origin-left"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            style={{ right: 0 }}
+          />
 
-          {/* Horizontal connecting line */}
-          <div className="hidden lg:block absolute top-[11px] left-0 right-0 h-px bg-gray-300" />
-
-          {/* Items */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-6">
             {points.map((point, index) => (
-              <div key={index} className="relative">
-
-                {/* Dot + number */}
+              <motion.div
+                key={index}
+                className="relative"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.1 }}
+              >
                 <div className="flex items-center gap-3 mb-6 relative z-10">
                   <span className="w-[22px] h-[22px] rounded-full border-2 border-primary bg-gray-100 flex items-center justify-center flex-shrink-0">
                     <span className="w-2 h-2 rounded-full bg-primary" />
                   </span>
-                  <span className="text-xs font-bold tracking-widest text-gray-400 uppercase">
-                    {point.number}
-                  </span>
                 </div>
-
-                {/* Content */}
                 <h3 className="text-base font-bold mb-2 leading-snug">
                   {point.title}
                 </h3>
                 <p className="text-gray-500 font-light text-sm leading-relaxed">
                   {point.description}
                 </p>
-
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
 
       </div>
     </section>
-);
-
-
-          <div>
-            <h2 className="font-display text-4xl lg:text-5xl font-bold mb-8">
-              ¿Por qué elegirnos?
-            </h2>
-            <div className="space-y-8">
-              {points.map((point, index) => (
-                <div key={index} className="flex gap-4">
-                  <div className="mt-1 flex-shrink-0">
-                    <CheckCircle2 className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-1">{point.title}</h3>
-                    <p className="text-gray-400 font-light">{point.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+  );
 };
 
 export default WhyUs;

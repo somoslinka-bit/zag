@@ -1,11 +1,18 @@
 import React from 'react';
+import { motion } from "motion/react";
 import { MessageCircle } from 'lucide-react';
 
 const Contact: React.FC = () => {
   return (
     <section id="contact" className="py-24 lg:py-32 bg-gray-50 scroll-mt-32">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-[3rem] p-8 lg:p-16 shadow-2xl relative overflow-hidden">
+        <motion.div
+          className="bg-white rounded-[3rem] p-8 lg:p-16 shadow-2xl relative overflow-hidden"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           {/* Decorative gradients */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
           
@@ -60,7 +67,7 @@ const Contact: React.FC = () => {
               Enviar Mensaje
             </button>
           </form>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

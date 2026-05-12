@@ -72,10 +72,10 @@ const ServiceStickyCard = ({ i, service, progress, range, targetScale }: Service
                    w-full max-w-[340px] h-[220px]
                    sm:max-w-[560px] sm:h-[230px]
                    lg:max-w-[780px] lg:h-[250px]
-                   bg-white border border-[#FF4500]/20 shadow-sm"
+                   bg-white border border-gray-900/15 shadow-sm"
       >
-        {/* Barra naranja superior */}
-        <div className="h-[3px] w-full bg-[#FF4500]" />
+        {/* Barra superior */}
+        <div className="h-[3px] w-full bg-gray-900" />
 
         <div className="h-full w-full flex flex-col p-6 sm:p-8 lg:p-10 pt-5 sm:pt-6 lg:pt-7">
           {/* Header */}
