@@ -66,7 +66,7 @@ const ServiceStickyCard = ({ i, service, progress, range, targetScale }: Service
       <motion.div
         style={{
           scale,
-          top: `calc(-5vh + ${i * 20 + 200}px)`,
+          top: `calc(-5vh + ${i * 20 + 60}px)`,
         }}
         className="relative -top-1/4 origin-top overflow-hidden rounded-2xl sm:rounded-3xl
                    w-full max-w-[340px] h-[220px]
@@ -123,7 +123,7 @@ const Services = () => {
   return (
     <section id="services" className="scroll-mt-32">
       {/* Título — fuera del contenedor sticky */}
-      <div className="pt-16 pb-8 bg-white text-center">
+      <div className="pt-16 pb-8 bg-gray-100 text-center">
         <h2 className="font-display text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
           Servicios
         </h2>
@@ -136,9 +136,9 @@ const Services = () => {
       <div
         ref={container}
         className="relative flex flex-col items-center bg-gray-100
-                   pt-[2vh] pb-[35vh]
-                   sm:pt-[3vh] sm:pb-[45vh]
-                   lg:pt-[4vh] lg:pb-[55vh]"
+                   pt-0 pb-[35vh]
+                   sm:pb-[45vh]
+                   lg:pb-[55vh]"
       >
         {serviceCategories.map((service, i) => {
           const targetScale = Math.max(0.7, 1 - (serviceCategories.length - i - 1) * 0.05);
