@@ -32,13 +32,16 @@ const Marquee: React.FC = () => {
         <h2 className="font-display text-3xl font-bold mb-4 text-gray-900">Empresas que confiaron en nosotros</h2>
       </div>
       <div className="relative overflow-hidden">
-        <div className="py-4 animate-marquee flex items-center min-w-max gap-0 px-0">
+        <div
+          className="py-4 animate-marquee flex items-center min-w-max gap-0 px-0"
+          style={{ willChange: 'transform', backfaceVisibility: 'hidden' }}
+        >
           {track.map((logo, index) => (
             <img
               key={index}
               src={logo.src}
               alt={logo.alt}
-              className="flex-shrink-0 h-48 w-auto object-contain transition-all duration-300"
+              className="flex-shrink-0 h-24 sm:h-36 w-auto object-contain transition-all duration-300"
               style={{ filter: 'grayscale(1) opacity(0.55)' }}
               onMouseEnter={e => (e.currentTarget.style.filter = 'grayscale(0) opacity(1)')}
               onMouseLeave={e => (e.currentTarget.style.filter = 'grayscale(1) opacity(0.55)')}
