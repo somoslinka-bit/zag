@@ -38,7 +38,7 @@ const Process: React.FC = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Nuestro Enfoque</span>
-          <h2 className="font-display text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
+          <h2 className="font-display text-4xl lg:text-5xl font-bold mb-6 text-gray-900 text-center">
             Conocé nuestro método de trabajo
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">

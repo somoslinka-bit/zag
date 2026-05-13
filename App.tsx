@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Preloader from "./components/Preloader";
 import Navbar from './components/Navbar';
@@ -11,7 +11,8 @@ import Marquee from './components/Marquee';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Consultoria from "./components/Consultoria";
-import ConsultoriaPage from "./pages/ConsultoriaPage";
+
+const ConsultoriaPage = lazy(() => import('./pages/ConsultoriaPage'));
 
 
 // ── Página principal (Home) ──────────────────────────────────────────────────
@@ -61,7 +62,7 @@ const App: React.FC = () => {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/consultoria" element={<ConsultoriaPage />} />
+        <Route path="/consultoria" element={<Suspense fallback={null}><ConsultoriaPage /></Suspense>} />
       </Routes>
     </BrowserRouter>
   );
