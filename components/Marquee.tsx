@@ -24,7 +24,7 @@ const logos = [
 ];
 
 const Marquee: React.FC = () => {
-  const track = [...logos, ...logos, ...logos];
+  const track = [...logos, ...logos];
 
   return (
     <div className="py-20 border-y border-gray-200 bg-white overflow-hidden">

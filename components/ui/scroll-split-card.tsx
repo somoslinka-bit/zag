@@ -77,7 +77,7 @@ export function ScrollSplitCard({
   };
 
   return (
-    <div ref={containerRef} className={cn("relative h-[500vh] w-full", className)}>
+    <div ref={containerRef} className={cn("relative h-[280vh] w-full", className)}>
       <div className="sticky top-0 flex h-screen w-full items-center justify-center overflow-hidden bg-gray-950 [perspective:1200px]">
 
         {/* Scroll down indicator */}
@@ -93,14 +93,14 @@ export function ScrollSplitCard({
         {/* Grupo de cards */}
         <motion.div
           style={{ scale, y: cardsY, transformStyle: "preserve-3d" }}
-          className="flex flex-col w-full max-w-sm sm:max-w-md px-5"
+          className="flex flex-col w-full max-w-sm sm:max-w-lg px-5"
         >
           {cards.slice(0, 3).map((card, i) => (
             <motion.div
               key={i}
               className="relative"
               style={{
-                height: "156px",
+                height: "190px",
                 y: yFor(i),
                 rotateX,
                 rotateZ: rotateZFor(i),
