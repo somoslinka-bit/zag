@@ -19,7 +19,6 @@ const Navbar: React.FC = () => {
     { name: 'Enfoque', href: '#process' },
     { name: 'Servicios', href: '#services' },
     { name: 'Consultoría', href: '#consultoria' },
-    { name: 'Equipo', href: '#team' },
   ];
 
   return (
