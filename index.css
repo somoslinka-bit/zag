@@ -15,7 +15,7 @@
   --font-sans: 'Raleway', sans-serif;
   --font-display: 'Raleway', sans-serif;
 
-  --animate-marquee: marquee 36s linear infinite;
+  --animate-marquee: marquee 11s linear infinite;
   --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
 }
 
