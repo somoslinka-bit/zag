@@ -61,41 +61,34 @@ const ServiceStickyCard = ({ i, service, progress, range, targetScale }: Service
   return (
     <div
       ref={container}
-      className="sticky top-0 flex items-center justify-center px-4 sm:px-6 lg:px-8"
+      className="sticky top-0 flex items-center justify-center px-3 sm:px-6 lg:px-8"
     >
       <motion.div
         style={{
           scale,
-          top: `calc(-5vh + ${i * 20 + 60}px)`,
+          top: `calc(-5vh + ${i * 22 + 64}px)`,
         }}
         className="relative -top-1/4 origin-top overflow-hidden rounded-2xl sm:rounded-3xl
-                   w-full max-w-[340px] h-[140px]
-                   sm:max-w-[560px] sm:h-[150px]
-                   lg:max-w-[780px] lg:h-[160px]
-                   bg-white border border-gray-900/15 shadow-sm"
+                   w-full max-w-6xl h-[160px] sm:h-[170px] lg:h-[180px]
+                   bg-white border border-gray-900/10 shadow-md"
       >
-        {/* Barra superior */}
         <div className="h-[3px] w-full bg-gray-900" />
 
-        <div className="h-full w-full flex flex-col justify-center p-6 sm:p-8 lg:p-10 pt-5 sm:pt-6 lg:pt-7">
-          {/* Header */}
-          <div className="flex items-start gap-4">
-            <div
-              className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center flex-shrink-0"
-              style={{ backgroundColor: '#FF4500' + '18', color: '#FF4500' }}
-            >
-              {service.icon}
-            </div>
-            <div>
-              <span className="text-xs font-bold uppercase tracking-widest" style={{ color: '#FF4500' }}>
-                {String(i + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 leading-tight mt-0.5">
-                {service.title}
-              </h3>
-            </div>
+        <div className="h-full flex items-center gap-5 sm:gap-7 px-7 sm:px-12 lg:px-16">
+          <div
+            className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center flex-shrink-0"
+            style={{ backgroundColor: '#FF4500' + '14', color: '#FF4500' }}
+          >
+            {service.icon}
           </div>
-
+          <div>
+            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: '#FF4500' }}>
+              {String(i + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
+            </span>
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mt-0.5">
+              {service.title}
+            </h3>
+          </div>
         </div>
       </motion.div>
     </div>
