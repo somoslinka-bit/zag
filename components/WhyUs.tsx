@@ -30,7 +30,7 @@ const WhyUs: React.FC = () => {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <motion.h2
-          className="font-display text-4xl lg:text-5xl font-bold mb-16"
+          className="font-display text-4xl lg:text-5xl font-bold mb-16 text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}

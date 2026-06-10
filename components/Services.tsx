@@ -77,7 +77,7 @@ const ServiceStickyCard = ({ i, service, progress, range, targetScale }: Service
         {/* Barra superior */}
         <div className="h-[3px] w-full bg-gray-900" />
 
-        <div className="h-full w-full flex flex-col p-6 sm:p-8 lg:p-10 pt-5 sm:pt-6 lg:pt-7">
+        <div className="h-full w-full flex flex-col justify-center p-6 sm:p-8 lg:p-10 pt-5 sm:pt-6 lg:pt-7">
           {/* Header */}
           <div className="flex items-start gap-4">
             <div
@@ -130,7 +130,7 @@ const Services = () => {
                    lg:pb-[55vh]"
       >
         {serviceCategories.map((service, i) => {
-          const targetScale = Math.max(0.7, 1 - (serviceCategories.length - i - 1) * 0.05);
+          const targetScale = Math.max(0.92, 1 - (serviceCategories.length - i - 1) * 0.02);
           return (
             <ServiceStickyCard
               key={i}

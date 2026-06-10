@@ -23,13 +23,13 @@ const Navbar: React.FC = () => {
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-28">
+        <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0 flex items-center">
             <a href="#" className="flex items-center gap-2 group py-2">
               <img
                 src="/LogoZAG - Editado.png"
                 alt="Logo ZAG"
-                className="h-28 w-auto object-contain"
+                className="h-14 w-auto object-contain"
               />
             </a>
           </div>
