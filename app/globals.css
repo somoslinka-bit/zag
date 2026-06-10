@@ -165,6 +165,11 @@
   --font-sans: 'Raleway', sans-serif;
   --font-display: 'Raleway', sans-serif;
 
+  /* Sin bold en toda la web */
+  --font-weight-bold: 400;
+  --font-weight-extrabold: 400;
+  --font-weight-black: 400;
+
   --animate-cosmic-spin: cosmic-spin 3s linear infinite;
   --animate-cosmic-spin-slow: cosmic-spin-slow 5s linear infinite;
 

@@ -345,12 +345,6 @@ const ConsultoriaPage: React.FC = () => {
                   <MessageCircle className="w-5 h-5" />
                   Escribinos por WhatsApp
                 </a>
-                <Link
-                  href="/#contact"
-                  className="inline-flex items-center justify-center px-8 py-4 border border-gray-300 text-gray-900 font-semibold rounded-full hover:border-primary hover:text-primary transition-all duration-300"
-                >
-                  Enviar un mensaje
-                </Link>
               </div>
             </div>
           </div>
