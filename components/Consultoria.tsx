@@ -57,28 +57,6 @@ export default function Consultoria() {
           </div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {audiences.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.12 }}
-              className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300"
-            >
-              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
-                <span className="font-bold text-lg">{index + 1}</span>
-              </div>
-              <h4 className="text-xl font-bold mb-3 text-gray-900">
-                {item.title}
-              </h4>
-              <p className="text-gray-600 leading-relaxed text-sm font-light">
-                {item.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
 
       </div>
     </section>

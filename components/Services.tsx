@@ -96,17 +96,6 @@ const ServiceStickyCard = ({ i, service, progress, range, targetScale }: Service
             </div>
           </div>
 
-          {/* Items */}
-          <div className="flex flex-wrap gap-2 mt-4">
-            {service.items.map((item, idx) => (
-              <span
-                key={idx}
-                className="text-xs sm:text-sm text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
         </div>
       </motion.div>
     </div>
@@ -127,8 +116,8 @@ const Services = () => {
         <h2 className="font-display text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
           Servicios
         </h2>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
-          Soluciones integrales para cada etapa de tu negocio.
+        <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light px-6 text-center">
+          Soluciones integrales para cada etapa<br className="sm:hidden" /> de tu negocio.
         </p>
       </div>
 

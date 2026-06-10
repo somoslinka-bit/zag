@@ -41,7 +41,7 @@ const Marquee: React.FC = () => {
               key={index}
               src={logo.src}
               alt={logo.alt}
-              className="flex-shrink-0 h-24 sm:h-36 w-auto object-contain transition-all duration-300"
+              className="flex-shrink-0 h-32 sm:h-44 w-auto object-contain transition-all duration-300"
               style={{ filter: 'grayscale(1) opacity(0.55)' }}
               onMouseEnter={e => (e.currentTarget.style.filter = 'grayscale(0) opacity(1)')}
               onMouseLeave={e => (e.currentTarget.style.filter = 'grayscale(1) opacity(0.55)')}
