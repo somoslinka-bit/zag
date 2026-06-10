@@ -70,7 +70,7 @@ const ServiceStickyCard = ({ i, service, progress, range, targetScale }: Service
         }}
         className="relative -top-1/4 origin-top overflow-hidden rounded-2xl sm:rounded-3xl
                    w-full max-w-6xl h-[140px] sm:h-[150px] lg:h-[160px]
-                   bg-white border border-gray-900/10 shadow-md"
+                   bg-white border border-gray-900/10 shadow-sm"
       >
         <div className="h-[3px] w-full bg-gray-900" />
 
