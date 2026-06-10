@@ -1,14 +1,73 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
   <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500&display=swap" rel="stylesheet">
-
-    <link rel="icon" type="image/png" href="/LogoZAG.png" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zag Consultora | Marketing Estratégico</title>
+
+    <!-- Fuentes async (no render-blocking) — solo pesos usados: 200 y 400 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap"
+          media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap">
+    </noscript>
+
+    <link rel="icon" type="image/png" href="/LogoZAG - Editado.png" />
+
+    <!-- SEO Principal -->
+    <title>Zag Consultora | Marketing Estratégico en Tandil</title>
+    <meta name="description" content="Zag Consultora es una agencia de marketing estratégico para empresas y pymes de Tandil. Branding, contenido, publicidad digital, consultoría y más." />
+    <link rel="canonical" href="https://zag-delta.vercel.app/" />
+    <meta name="theme-color" content="#FF4500" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Zag Consultora | Marketing Estratégico en Tandil" />
+    <meta property="og:description" content="Agencia de marketing estratégico para empresas y pymes de Tandil. Branding, contenido, publicidad digital y consultoría." />
+    <meta property="og:url" content="https://zag-delta.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:site_name" content="Zag Consultora" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Zag Consultora | Marketing Estratégico en Tandil" />
+    <meta name="twitter:description" content="Agencia de marketing estratégico para empresas y pymes de Tandil. Branding, contenido, publicidad digital y consultoría." />
+
+    <!-- Schema JSON-LD: Organization + WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "Zag Consultora",
+          "url": "https://zag-delta.vercel.app/",
+          "logo": "https://zag-delta.vercel.app/LogoZAG%20-%20Editado.png",
+          "description": "Agencia de marketing estratégico para empresas y pymes. Branding, contenido, publicidad digital y consultoría.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Tandil",
+            "addressRegion": "Buenos Aires",
+            "addressCountry": "AR"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+54-9-2494-60-6868",
+            "contactType": "customer service",
+            "email": "Zagconsultora@gmail.com"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "name": "Zag Consultora",
+          "url": "https://zag-delta.vercel.app/"
+        }
+      ]
+    }
+    </script>
+
     <style>
       body {
         font-family: 'Raleway', sans-serif;
@@ -21,12 +80,10 @@
       }
     </style>
 
-<link rel="stylesheet" href="/index.css">
-</head>
+    <link rel="stylesheet" href="/index.css">
+  </head>
   <body class="antialiased selection:bg-primary selection:text-white">
     <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
-</body>
-
-  
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>

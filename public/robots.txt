@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Disallow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://zag-delta.vercel.app/sitemap.xml
