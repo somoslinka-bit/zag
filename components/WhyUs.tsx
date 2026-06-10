@@ -43,18 +43,21 @@ const WhyUs: React.FC = () => {
           {points.map((point, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
             >
-              <h3 className="text-lg font-bold text-gray-900 mb-3">
-                {point.title}
-              </h3>
-              <p className="text-gray-600 font-light leading-relaxed">
-                {point.description}
-              </p>
+              <div className="h-[3px] w-full" style={{ backgroundColor: '#FF4500' }} />
+              <div className="p-8">
+                <h3 className="text-lg font-bold text-gray-900 mb-3">
+                  {point.title}
+                </h3>
+                <p className="text-gray-600 font-light leading-relaxed">
+                  {point.description}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>

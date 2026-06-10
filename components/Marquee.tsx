@@ -20,7 +20,6 @@ const logos = [
   { src: '/logos/22.jpg',                    alt: 'Cliente' },
   { src: '/logos/23.jpg',                    alt: 'Cliente' },
   { src: '/logos/24.jpg',                    alt: 'Cliente' },
-  { src: '/logos/real-estate-historias.png', alt: 'Cliente' },
 ];
 
 const Marquee: React.FC = () => {

@@ -69,9 +69,9 @@ const ServiceStickyCard = ({ i, service, progress, range, targetScale }: Service
           top: `calc(-5vh + ${i * 20 + 60}px)`,
         }}
         className="relative -top-1/4 origin-top overflow-hidden rounded-2xl sm:rounded-3xl
-                   w-full max-w-[340px] h-[220px]
-                   sm:max-w-[560px] sm:h-[230px]
-                   lg:max-w-[780px] lg:h-[250px]
+                   w-full max-w-[340px] h-[140px]
+                   sm:max-w-[560px] sm:h-[150px]
+                   lg:max-w-[780px] lg:h-[160px]
                    bg-white border border-gray-900/15 shadow-sm"
       >
         {/* Barra superior */}
@@ -79,7 +79,7 @@ const ServiceStickyCard = ({ i, service, progress, range, targetScale }: Service
 
         <div className="h-full w-full flex flex-col p-6 sm:p-8 lg:p-10 pt-5 sm:pt-6 lg:pt-7">
           {/* Header */}
-          <div className="flex items-start gap-4 mb-5">
+          <div className="flex items-start gap-4">
             <div
               className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center flex-shrink-0"
               style={{ backgroundColor: '#FF4500' + '18', color: '#FF4500' }}
