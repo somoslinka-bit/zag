@@ -1,13 +1,6 @@
 import type { Metadata } from 'next'
-import { Raleway } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
-
-const raleway = Raleway({
-  subsets: ['latin'],
-  weight: ['200', '400'],
-  display: 'swap',
-})
 
 export const metadata: Metadata = {
   title: 'Zag Consultora | Marketing Estratégico en Tandil',
@@ -71,12 +64,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es" className="scroll-smooth">
       <head>
         <meta name="theme-color" content="#FF4500" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap"
+          rel="stylesheet"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
         />
       </head>
-      <body className={`${raleway.className} antialiased selection:bg-primary selection:text-white`}>
+      <body className="antialiased selection:bg-primary selection:text-white">
         {children}
         <Script id="meta-pixel" strategy="afterInteractive">{`
           !function(f,b,e,v,n,t,s)
