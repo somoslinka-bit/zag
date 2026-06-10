@@ -9,10 +9,10 @@ const Footer: React.FC = () => {
           <div className="space-y-6">
             <div className="h-10 w-auto">
               <img 
-                src="/LogoZAG.png" 
-                alt="Logo ZAG" 
+                src="/LogoZAG - Editado.png"
+                alt="Logo ZAG"
                 className="h-full w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all"
-                onError={(e) => { (e.currentTarget as HTMLImageElement).src = "LogoZAG.png"; }}
+                onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/LogoZAG - Editado.png"; }}
               />
             </div>
             <p className="text-sm text-gray-600 leading-relaxed">

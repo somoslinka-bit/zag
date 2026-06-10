@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import logoUrl from '../LogoZAG.png';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +27,7 @@ const Navbar: React.FC = () => {
           <div className="flex-shrink-0 flex items-center">
             <a href="#" className="flex items-center gap-2 group py-2">
               <img
-                src={logoUrl}
+                src="/LogoZAG - Editado.png"
                 alt="Logo ZAG"
                 className="h-28 w-auto object-contain"
               />
