@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import { ArrowLeft, ArrowRight, Quote } from 'lucide-react';
 

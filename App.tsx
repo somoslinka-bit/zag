@@ -12,7 +12,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Consultoria from "./components/Consultoria";
 
-const ConsultoriaPage = lazy(() => import('./pages/ConsultoriaPage'));
+const ConsultoriaPage = lazy(() => import('./views/ConsultoriaPage'));
 
 
 // ── Página principal (Home) ──────────────────────────────────────────────────

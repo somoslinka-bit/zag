@@ -1,3 +1,4 @@
+'use client'
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { Palette, Video, Megaphone, Radio, Briefcase, Users, Calendar, Layout } from 'lucide-react';

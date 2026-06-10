@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+'use client'
+import Link from "next/link";
 import { motion } from "motion/react";
 
 export default function Consultoria() {
@@ -49,7 +50,7 @@ export default function Consultoria() {
           </p>
           <div className="mt-10">
             <Link
-              to="/consultoria"
+              href="/consultoria"
               className="inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-primary text-white font-semibold shadow-sm hover:shadow-xl transition-all duration-300 hover:bg-primary/90"
             >
               Conocé cómo trabajamos

@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import { Instagram, Linkedin, MapPin, Mail, Phone } from 'lucide-react';
 

@@ -1,5 +1,7 @@
+'use client'
+
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import {
@@ -124,7 +126,7 @@ const ConsultoriaPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Breadcrumb */}
           <Link
-            to="/"
+            href="/"
             className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-primary transition-colors mb-10 font-medium group"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
@@ -344,7 +346,7 @@ const ConsultoriaPage: React.FC = () => {
                   Escribinos por WhatsApp
                 </a>
                 <Link
-                  to="/#contact"
+                  href="/#contact"
                   className="inline-flex items-center justify-center px-8 py-4 border border-gray-300 text-gray-900 font-semibold rounded-full hover:border-primary hover:text-primary transition-all duration-300"
                 >
                   Enviar un mensaje
