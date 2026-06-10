@@ -61,15 +61,15 @@ const ServiceStickyCard = ({ i, service, progress, range, targetScale }: Service
   return (
     <div
       ref={container}
-      className="sticky top-0 flex items-center justify-center px-3 sm:px-6 lg:px-8"
+      className="sticky top-0 w-full flex items-center justify-center px-3 sm:px-6 lg:px-8"
     >
       <motion.div
         style={{
           scale,
-          top: `calc(-5vh + ${i * 22 + 64}px)`,
+          top: `calc(-5vh + ${i * 20 + 60}px)`,
         }}
         className="relative -top-1/4 origin-top overflow-hidden rounded-2xl sm:rounded-3xl
-                   w-full max-w-6xl h-[160px] sm:h-[170px] lg:h-[180px]
+                   w-full max-w-6xl h-[140px] sm:h-[150px] lg:h-[160px]
                    bg-white border border-gray-900/10 shadow-md"
       >
         <div className="h-[3px] w-full bg-gray-900" />
