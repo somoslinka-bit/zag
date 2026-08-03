@@ -21,6 +21,9 @@ const logos = [
   { src: '/logos/22.jpg',                    alt: 'Cliente' },
   { src: '/logos/23.jpg',                    alt: 'Cliente' },
   { src: '/logos/24.jpg',                    alt: 'Cliente' },
+  { src: '/logos/25.png',                    alt: 'Maderera San Pedro' },
+  { src: '/logos/26.png',                    alt: 'Estudio Cuesta Arquitectos' },
+  { src: '/logos/27.png',                    alt: 'La Casa del Piso' },
 ];
 
 const Marquee: React.FC = () => {
