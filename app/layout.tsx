@@ -5,14 +5,14 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Zag Consultora | Marketing Estratégico en Tandil',
   description: 'Zag Consultora es una agencia de marketing estratégico para empresas y pymes de Tandil. Branding, contenido, publicidad digital, consultoría y más.',
-  metadataBase: new URL('https://zag-delta.vercel.app'),
+  metadataBase: new URL('https://zagconsultora.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'Zag Consultora | Marketing Estratégico en Tandil',
     description: 'Agencia de marketing estratégico para empresas y pymes de Tandil. Branding, contenido, publicidad digital y consultoría.',
-    url: 'https://zag-delta.vercel.app/',
+    url: 'https://zagconsultora.com/',
     siteName: 'Zag Consultora',
     locale: 'es_AR',
     type: 'website',
@@ -35,8 +35,8 @@ const schemaOrg = {
     {
       '@type': 'Organization',
       name: 'Zag Consultora',
-      url: 'https://zag-delta.vercel.app/',
-      logo: 'https://zag-delta.vercel.app/LogoZAG%20-%20Editado.png',
+      url: 'https://zagconsultora.com/',
+      logo: 'https://zagconsultora.com/LogoZAG%20-%20Editado.png',
       description: 'Agencia de marketing estratégico para empresas y pymes.',
       address: {
         '@type': 'PostalAddress',
@@ -54,7 +54,7 @@ const schemaOrg = {
     {
       '@type': 'WebSite',
       name: 'Zag Consultora',
-      url: 'https://zag-delta.vercel.app/',
+      url: 'https://zagconsultora.com/',
     },
   ],
 }
