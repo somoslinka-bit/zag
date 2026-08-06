@@ -16,9 +16,6 @@ const Footer: React.FC = () => {
                 onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/LogoZAG - Editado.png"; }}
               />
             </div>
-            <p className="text-sm text-gray-600 leading-relaxed">
-              Ayudamos a empresas a navegar el paisaje digital con precisión y creatividad.
-            </p>
             <div className="flex space-x-4">
               <a href="#" className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors">
                 <Instagram size={18} />

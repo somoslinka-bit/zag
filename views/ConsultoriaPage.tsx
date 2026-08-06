@@ -86,29 +86,9 @@ const ConsultoriaPage: React.FC = () => {
     "Claridad total sobre tu propuesta de valor y diferenciación",
     "Un plan de marketing y comunicación listo para ejecutar",
     "Identificación de los canales con mayor potencial para tu negocio",
-    "Mensajes que conectan con tu audiencia ideal",
     "Métricas claras para medir el éxito de cada acción",
-    "Acompañamiento experto durante todo el proceso",
+    "Acompañamiento durante todo el proceso",
     "Soporte entre sesiones vía WhatsApp o email",
-  ];
-
-  const faqs = [
-    {
-      q: "¿Cuántas sesiones incluye el proceso de consultoría?",
-      a: "El proceso completo incluye entre 4 y 6 sesiones, dependiendo de las necesidades del proyecto. Cada sesión dura aproximadamente 90 minutos y tiene objetivos específicos.",
-    },
-    {
-      q: "¿Puedo contratar solo una sesión de diagnóstico?",
-      a: "Sí. Ofrecemos una sesión de diagnóstico individual para quienes quieren un primer análisis y recomendaciones puntuales antes de comprometerse con un proceso completo.",
-    },
-    {
-      q: "¿Las sesiones son presenciales o virtuales?",
-      a: "Trabajamos en formato virtual (Zoom o Meet).",
-    },
-    {
-      q: "¿Cuánto tiempo lleva ver resultados?",
-      a: "Los resultados estratégicos (claridad, plan organizado, mensajes definidos) son inmediatos. Los resultados de negocio dependen de la ejecución, pero la mayoría de nuestros clientes ven mejoras en los primeros 90 días de aplicación del plan.",
-    },
   ];
 
   return (
@@ -283,33 +263,6 @@ const ConsultoriaPage: React.FC = () => {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">
-              Preguntas frecuentes
-            </span>
-          </div>
-
-          <div className="space-y-6">
-            {faqs.map((faq, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow"
-              >
-                <h4 className="text-lg font-bold text-gray-900 mb-3">
-                  {faq.q}
-                </h4>
-                <p className="text-gray-600 font-light leading-relaxed">
-                  {faq.a}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </section>

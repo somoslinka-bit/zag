@@ -60,7 +60,7 @@ const Hero: React.FC = () => {
             </h1>
 
             <p className="text-xl lg:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-light">
-              No se trata de hacer más, sino de hacer mejor.
+              No se trata de hacer más,<br className="sm:hidden" /> sino de hacer mejor.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
