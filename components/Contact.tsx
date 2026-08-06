@@ -5,8 +5,11 @@ import { MessageCircle, Send, CheckCircle, AlertCircle } from 'lucide-react'
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
+// Endpoint de Formspree (el ID se configura en .env.local y en Vercel)
+const FORMSPREE_URL = `https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_ID}`
+
 const Contact: React.FC = () => {
-  const [form, setForm] = useState({ nombre: '', email: '', mensaje: '' })
+  const [form, setForm] = useState({ nombre: '', email: '', mensaje: '', website: '' })
   const [status, setStatus] = useState<Status>('idle')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -18,15 +21,21 @@ const Contact: React.FC = () => {
     setStatus('loading')
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch(FORMSPREE_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          nombre: form.nombre,
+          email: form.email, // Formspree lo usa como Reply-To
+          message: form.mensaje,
+          _subject: `Nuevo mensaje de ${form.nombre} — zagconsultora.com`,
+          _gotcha: form.website, // honeypot: si viene con contenido, Formspree descarta el envío
+        }),
       })
 
       if (res.ok) {
         setStatus('success')
-        setForm({ nombre: '', email: '', mensaje: '' })
+        setForm({ nombre: '', email: '', mensaje: '', website: '' })
       } else {
         setStatus('error')
       }
@@ -72,6 +81,18 @@ const Contact: React.FC = () => {
             <div className="text-center mb-8">
               <p className="text-sm uppercase tracking-widest text-gray-500">O envíanos un mensaje directo</p>
             </div>
+
+            {/* Honeypot antispam: invisible para personas, los bots lo completan */}
+            <input
+              type="text"
+              name="website"
+              value={form.website}
+              onChange={handleChange}
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              className="hidden"
+            />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <input
