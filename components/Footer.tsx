@@ -17,7 +17,13 @@ const Footer: React.FC = () => {
               />
             </div>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors">
+              <a
+                href="https://www.instagram.com/zag.consultora/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram de ZAG Consultora"
+                className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors"
+              >
                 <Instagram size={18} />
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors">
