@@ -25,7 +25,8 @@ export const metadata: Metadata = {
     images: ['/og-image.jpg'],
   },
   icons: {
-    icon: '/LogoZAG - Editado.png',
+    icon: '/favicon.png',
+    apple: '/favicon.png',
   },
 }
 
